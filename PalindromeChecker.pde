@@ -14,9 +14,23 @@ public void setup()
     }
   }
 }
-public boolean palindrome(String word)
+public boolean palindrome(String worda)
 {
-  //your code here
-  return false;
+  String word = "";
+  for(int i=0; i<worda.length(); i++){
+    char poo = worda.charAt(i); 
+    if(Character.isLetter(poo)){
+      word += worda.substring(i, i+1);
+    }
+  }
+word = word.toLowerCase();
+  int x = 0;
+  for(int i=0; i<word.length()/2; i++){
+    if(word.charAt(i) == word.charAt(word.length()-i-1)){
+      x++;
+    }
+  }
+  if(x == word.length()/2){
+    return true;
+  }else return false;
 }
-
